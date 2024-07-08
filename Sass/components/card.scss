@@ -1,8 +1,14 @@
+// Command for using math in properties
+@use 'sass:math';
+
 .card{
   display: block;
   padding: $base-padding;
   border: $base-border-thickness solid #ddd;
   box-shadow: $base-box-shadow;
+
+  // To change the border-radius from 20px to 5px we`ll use math.div
+  border-radius: math.div($base-border-radius, 4);
 
   .card-title{
     font-size: $base-font-size;
