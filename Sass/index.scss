@@ -1,39 +1,12 @@
+// variables & functions
 @import 'variables';
+
+// base & layout
 @import 'base';
 
-h1{
-  color: $primary;
-  margin-bottom: $base-margin;
-}
+// colors
 
-a{
-  color: $secondary;
-}
+// components (button, card, navbar)
+@import 'components/card';
+//utilities (margin, padding, opacity)
 
-button{
-  color: white;
-  border: 0;
-  background: $primary;
-  border-radius: $base-border-radius;
-  padding: $base-padding;
-}
-
-.error{
-  color: $error;
-  border-color: $error;
-  border-style: solid;
-  margin: $base-margin;
-  padding: $base-padding;
-  border-radius: $base-border-radius;
-  border-width: $base-border-thickness;
-}
-
-.notification{
-  color: $secondary;
-  border-color: $secondary;
-  border-style: solid;
-  margin: $base-margin;
-  padding: $base-padding;
-  border-radius: $base-border-radius;
-  border-width: $base-border-thickness;
-}
