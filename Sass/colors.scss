@@ -3,28 +3,65 @@
     color: $val;
   }
 
+  .text-hover-#{$key}{
+    
+    &:hover{
+      color: $val;
+    }
+  }
+
   .bg-#{$key}{
     background-color: $val;
   }
 
-  //light variations
-  @for $i from 1 through 9{
-    .text-#{$key}-light-#{$i} {
-      color: mix(white, $val, $i * 10); // Mix white color with different color in percentage
-    }
-    .bg-#{$key}-light-#{$i} {
-      background-color: mix(white, $val, $i * 10);
-    }
-  }
 
-  //dark variations
-  @for $i from 1 through 9{
-    .text-#{$key}-dark-#{$i} {
-      color: mix(black, $val, $i * 10);
+  // Conditionals in loop for creating different classes
+  @if($val != black and $val != white){
+    //light variations
+    @for $i from 1 through 9{
+      .text-#{$key}-light-#{$i} {
+        color: mix(white, $val, $i * 10); // Mix white color with different color in percentage
+      }
+
+      .text-hover-#{$key}-light-#{$i}{
+    
+        &:hover{
+          color: mix(white, $val, $i * 10);
+        }
+      }
+
+      .bg-#{$key}-light-#{$i} {
+        background-color: mix(white, $val, $i * 10);
+      }
     }
-    .bg-#{$key}-dark-#{$i} {
-      background-color: mix(black, $val, $i * 10);
+
+    //dark variations
+    @for $i from 1 through 9{
+      .text-#{$key}-dark-#{$i} {
+        color: mix(black, $val, $i * 10);
+      }
+
+      .text-hover-#{$key}-dark-#{$i}{
+    
+        &:hover{
+          color: mix(black, $val, $i * 10);
+        }
+      }
+
+      .bg-#{$key}-dark-#{$i} {
+        background-color: mix(black, $val, $i * 10);
+      }
     }
   }
 }
 
+// Create class if-test-2 in CSS beacause 10 not < 5
+@if(10 < 5){
+  .if-test{
+    color: black;
+  }
+} @else{
+  .if-test-2{
+    color: white;
+  }
+}

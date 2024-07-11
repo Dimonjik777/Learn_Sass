@@ -1,0 +1,7 @@
+@function light-comp($color) {
+  $complement: complement($color);
+  $light-complement: lighten($complement, 30%);
+
+  // The function outputs the value for the property
+  @return $light-complement;
+}
